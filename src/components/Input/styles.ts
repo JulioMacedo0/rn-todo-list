@@ -22,7 +22,7 @@ export const Input = styled.TextInput`
 `;
 
 export const Button = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.blue};
+  background-color: ${(props) => props.theme.blueDark};
   width: 52px;
   height: 52px;
   border-radius: 6px;
