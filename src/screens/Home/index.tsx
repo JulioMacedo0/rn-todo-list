@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import * as S from "./styles";
-import { View, Text, Switch } from "react-native";
+import { View, Text, Switch, SafeAreaView } from "react-native";
 import { ThemeContext, ThemeType } from "../../styles/themes/Theme";
+import { TextInfo } from "../../components/TextInfo";
+import { NumberSpan } from "../../components/NumberSpan";
 
 export const Home = () => {
   const { toggleTheme, theme } = useContext(ThemeContext);
@@ -10,8 +12,16 @@ export const Home = () => {
 
   return (
     <S.Container>
-      <Switch value={isDarkMode} onValueChange={toggleTheme} />
-      <S.Text>Hello</S.Text>
+      <S.HeaderInfo>
+        <S.ContainerInfo>
+          <TextInfo text="Criadas" color="blue" />
+          <NumberSpan number={"0"} />
+        </S.ContainerInfo>
+        <S.ContainerInfo>
+          <TextInfo text="Concluídas" color="purple" />
+          <NumberSpan number={"0"} />
+        </S.ContainerInfo>
+      </S.HeaderInfo>
     </S.Container>
   );
 };
