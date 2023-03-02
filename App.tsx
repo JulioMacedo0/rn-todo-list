@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useContext } from "react";
 import { Header } from "./src/components/Header";
 
 import { Home } from "./src/screens/Home";
