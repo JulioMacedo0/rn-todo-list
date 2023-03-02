@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import * as S from "./styles";
-import { View, Text, Switch, SafeAreaView } from "react-native";
 import { ThemeContext, ThemeType } from "../../styles/themes/Theme";
 import { TextInfo } from "../../components/TextInfo";
 import { NumberSpan } from "../../components/NumberSpan";
+import { Card } from "../../components/Card";
 
 export const Home = () => {
   const { toggleTheme, theme } = useContext(ThemeContext);
@@ -22,6 +22,7 @@ export const Home = () => {
           <NumberSpan number={"0"} />
         </S.ContainerInfo>
       </S.HeaderInfo>
+      <Card text="Hello" />
     </S.Container>
   );
 };
