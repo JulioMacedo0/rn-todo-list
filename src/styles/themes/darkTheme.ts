@@ -1,22 +1,19 @@
 export const darkTheme = {
-  normal: "#fff",
-  background: "#000",
-  green: "#50ccb0",
-  dark_green: "#196F3D",
-  red: "#f57767",
-  blue: "#83c6e1",
-  yellow: "#D4AC0D",
-  brown: "#553d2a",
-  skin_pink: "#e5cbce",
-  pink: "#FFC0CB",
-  title: "#fffaf9",
+  "gray-100": "#F2F2F2",
+  "gray-200": "#D9D9D9",
+  "gray-300": "#808080",
+  "gray-400": "#33333",
+  "gray-500": "#262626",
+  "gray-600": "#1A1A1A",
+  "gray-700": "#0D0D0D",
 
-  black: "#3e4a48",
-  dark_black: "#000",
+  puple: "#8284FA",
+  pupleDark: "#5E60CE",
 
-  grey: "#a0a0a0",
-  light_grey: "#d3d3d3",
+  blue: "#4EA8DE",
+  blueDark: "#1E6F9F",
 
-  white: "#ffffff",
-  purple: "#46295A",
+  danger: "#E25858",
+
+  background: "#454545",
 };
