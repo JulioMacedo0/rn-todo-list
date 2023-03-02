@@ -4,14 +4,16 @@ export const Container = styled.View`
   width: 90%;
   height: 52px;
   position: absolute;
-  bottom: 0px;
+  bottom: -26px;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
   gap: 6px;
+  z-index: 2;
 `;
 
 export const Input = styled.TextInput`
+  border: 1px solid ${(props) => props.theme["gray-700"]};
   color: ${(props) => props.theme["gray-100"]};
   font-size: 16px;
   padding: 12px;
