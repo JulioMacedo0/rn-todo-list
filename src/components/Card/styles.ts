@@ -6,7 +6,7 @@ interface TextProps {
 }
 
 export const Container = styled.View`
-  width: 90%;
+  width: 100%;
   height: 64px;
   background-color: ${(props) => props.theme["gray-500"]};
   border: 1px solid ${(props) => props.theme["gray-400"]};
@@ -27,4 +27,9 @@ export const Text = styled.Text<TextProps>`
   color: ${(props) =>
     props.isCheck ? props.theme["gray-300"] : props.theme["gray-100"]};
   text-decoration: ${(props) => (props.isCheck ? "line-through" : null)};
+`;
+
+export const Pressable = styled.Pressable`
+  flex: 1;
+  flex-direction: row;
 `;
