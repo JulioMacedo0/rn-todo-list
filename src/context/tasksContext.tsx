@@ -1,4 +1,11 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from "react";
 import { v4 as uuid } from "uuid";
 import "react-native-get-random-values";
 interface TaskContextType {
@@ -38,11 +45,11 @@ export const TaskContextProvider = ({ children }: TaskContextProps) => {
   ]);
   const [task, setTask] = useState("");
 
-  const handleOnChangeInput = (title: string) => {
+  const handleOnChangeInput = useCallback((title: string) => {
     setTask(title);
-  };
+  }, []);
 
-  const addTask = (title: string) => {
+  const addTask = useCallback((title: string) => {
     if (title.trim()) {
       setTasks((prevTasks) => [
         ...prevTasks,
@@ -50,34 +57,32 @@ export const TaskContextProvider = ({ children }: TaskContextProps) => {
       ]);
       setTask("");
     }
-  };
+  }, []);
 
-  const removeTask = (uuid: string) => {
-    setTasks(tasks.filter((task) => task.uuid != uuid));
-  };
+  const removeTask = useCallback((uuid: string) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.uuid !== uuid));
+  }, []);
 
-  const toggleTask = (uuid: string) => {
-    setTasks(
-      tasks.map((task) =>
-        task.uuid == uuid ? { ...task, isDone: !task.isDone } : task
+  const toggleTask = useCallback((uuid: string) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.uuid === uuid ? { ...task, isDone: !task.isDone } : task
       )
     );
-  };
+  }, []);
 
-  return (
-    <TaskContext.Provider
-      value={{
-        task,
-        tasks,
-        addTask,
-        removeTask,
-        toggleTask,
-        handleOnChangeInput,
-      }}
-    >
-      {children}
-    </TaskContext.Provider>
-  );
+  const value = useMemo(() => {
+    return {
+      task,
+      tasks,
+      addTask,
+      removeTask,
+      toggleTask,
+      handleOnChangeInput,
+    };
+  }, [task, tasks, addTask, removeTask, toggleTask, handleOnChangeInput]);
+
+  return <TaskContext.Provider value={value}>{children}</TaskContext.Provider>;
 };
 
 export const useTask = () => useContext(TaskContext);
