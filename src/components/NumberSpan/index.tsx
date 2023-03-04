@@ -1,7 +1,7 @@
 import * as S from "./styles";
 
 interface NumberSpanProps {
-  number: string;
+  number: number;
 }
 export const NumberSpan = ({ number }: NumberSpanProps) => {
   return (
