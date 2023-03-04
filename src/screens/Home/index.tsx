@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useMemo, useState } from "react";
 import * as S from "./styles";
 import { ThemeContext, ThemeType } from "../../styles/themes/Theme";
 import { TextInfo } from "../../components/TextInfo";
@@ -15,7 +15,11 @@ export const Home = () => {
   const { tasks } = useTask();
 
   const numberTasks = tasks.length;
-  const doneTasks = tasks.filter((task) => task.isDone == true).length;
+
+  const doneTasks = useMemo(
+    () => tasks.filter((task) => task.isDone).length,
+    [tasks]
+  );
 
   return (
     <S.Container>
