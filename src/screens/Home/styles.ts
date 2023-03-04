@@ -7,6 +7,7 @@ export const Container = styled.View`
   flex: 1;
   background-color: ${(props) => props.theme["gray-600"]};
   align-items: center;
+  padding-bottom: 30px;
 `;
 
 export const HeaderInfo = styled.View<HeaderInfoProps>`
