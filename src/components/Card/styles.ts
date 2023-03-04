@@ -10,7 +10,7 @@ export const Container = styled.View`
   height: 64px;
   background-color: ${(props) => props.theme["gray-500"]};
   border: 1px solid ${(props) => props.theme["gray-400"]};
-  padding: 12px 8px 12px 12px;
+  //padding: 12px 8px 12px 12px;
   flex-direction: row;
   gap: 8px;
   border-radius: 8px;
@@ -30,6 +30,14 @@ export const Text = styled.Text<TextProps>`
 `;
 
 export const Pressable = styled.Pressable`
+  padding: 12px 8px 12px 12px;
   flex: 1;
+  height: 100%;
+  align-items: center;
+  gap: 6px;
   flex-direction: row;
+`;
+
+export const PressableNotFlex = styled(Pressable)`
+  flex: 0.1;
 `;

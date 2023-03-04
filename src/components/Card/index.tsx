@@ -14,17 +14,17 @@ export const Card = ({ text, id, isDone }: CardProps) => {
 
   return (
     <S.Container>
-      <S.CheckBox
-        value={isDone}
-        onValueChange={() => toggleTask(id)}
-        color={isDone ? "#5E60CE" : undefined}
-      />
       <S.Pressable onPress={() => toggleTask(id)}>
+        <S.CheckBox
+          value={isDone}
+          onValueChange={() => toggleTask(id)}
+          color={isDone ? "#5E60CE" : undefined}
+        />
         <S.Text isCheck={isDone}>{text}</S.Text>
       </S.Pressable>
-      <Pressable onPress={() => removeTask(id)}>
+      <S.PressableNotFlex onPress={() => removeTask(id)}>
         <Trash size={22} color="#808080" />
-      </Pressable>
+      </S.PressableNotFlex>
     </S.Container>
   );
 };
