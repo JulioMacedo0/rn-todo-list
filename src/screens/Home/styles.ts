@@ -17,7 +17,7 @@ export const HeaderInfo = styled.View<HeaderInfoProps>`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom-width: ${(props) => (props.task > 0 ? 0 : 1)};
+  border-bottom-width: ${(props) => (props.task > 0 ? 0 : "1px")};
   border-color: ${(props) => props.theme["gray-400"]};
 `;
 
