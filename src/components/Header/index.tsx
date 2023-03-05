@@ -6,7 +6,7 @@ import * as S from "./styles";
 
 export const Header = () => {
   return (
-    <S.Container style={{ zIndex: 2 }}>
+    <S.Container>
       <Logo width={110} height={32} />
       <Input />
     </S.Container>
