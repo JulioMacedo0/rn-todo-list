@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import * as S from "./styles";
 import { Trash } from "phosphor-react-native";
@@ -9,12 +9,11 @@ interface CardProps {
   id: string;
   isDone: boolean;
 }
-export const Card = ({ text, id, isDone, ...props }: CardProps) => {
+export const Card = ({ text, id, isDone }: CardProps) => {
   const { toggleTask, removeTask } = useTask();
 
   const theme = useTheme();
 
-  console.log(props);
   return (
     <S.Container>
       <S.Pressable onPress={() => toggleTask(id)}>
@@ -26,7 +25,7 @@ export const Card = ({ text, id, isDone, ...props }: CardProps) => {
         <S.Text isCheck={isDone}>{text}</S.Text>
       </S.Pressable>
       <S.PressableNotFlex onPress={() => removeTask(id)}>
-        <Trash size={22} color="#808080" />
+        <Trash size={22} color={`${theme["gray-300"]}`} />
       </S.PressableNotFlex>
     </S.Container>
   );
