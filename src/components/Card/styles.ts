@@ -10,7 +10,6 @@ export const Container = styled.View`
   height: 64px;
   background-color: ${(props) => props.theme["gray-500"]};
   border: 1px solid ${(props) => props.theme["gray-400"]};
-  //padding: 12px 8px 12px 12px;
   flex-direction: row;
   gap: 8px;
   border-radius: 8px;
